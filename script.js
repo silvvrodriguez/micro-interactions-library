@@ -4,26 +4,56 @@
  * I've kept them clean and focused on readability.
  */
 const codeSnippets = {
-    ripple: `/* CSS & JS for the Ripple effect */
+    ripple: `/* CSS for Ripple Effect */
 .ripple-button {
     position: relative;
-    overflow: hidden; /* Critical for the ripple to stay inside */
-    /* ... rest of your styles */
+    overflow: hidden;
 }
 
-/* JavaScript logic: Creating the span on click */
-button.addEventListener('click', (e) => {
-    const rect = button.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    // ... logic to append span
-});`,
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: ripple-animation 0.6s linear;
+}`,
 
     magnetic: `/* The "Magnetic" feel comes from this multiplier */
-this.style.transform = \`translate(\${x * 0.3}px, \${y * 0.3}px)\`;
+const xOffset = (e.clientX - centerX) * 0.3;
+const yOffset = (e.clientY - centerY) * 0.3;
+
+this.style.transform = \`translate(\${xOffset}px, \${yOffset}px)\`;
 /* 0.3 is the "strength" of the magnet. Lower = heavier. */`,
-    
-    // ... (puedes mantener los otros snippets igual o resumirlos)
+
+    glow: `/* Interactive Glow Card (CSS Variables) */
+.glow-card {
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    background: radial-gradient(
+        circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 80%
+    );
+}
+
+/* JS to update variables */
+card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mouse-x', \`\${e.clientX - rect.left}px\`);
+    card.style.setProperty('--mouse-y', \`\${e.clientY - rect.top}px\`);
+});`,
+
+    scroll: `/* Smooth Scroll Implementation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* For JS triggers */
+window.scrollTo({
+    top: target.offsetTop,
+    behavior: 'smooth'
+});`
 };
 
 /**
@@ -31,38 +61,37 @@ this.style.transform = \`translate(\${x * 0.3}px, \${y * 0.3}px)\`;
  */
 
 // --- 1. Magnetic Effect Implementation ---
-// We use a small multiplier to make the movement subtle and not jumpy.
 document.querySelectorAll('.magnetic-button').forEach(button => {
     button.addEventListener('mousemove', function(e) {
         const rect = this.getBoundingClientRect();
-        
-        // Calculating the distance from the center of the button
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
-        const xOffset = (e.clientX - centerX) * 0.3; // 0.3 makes it follow the cursor gently
+        const xOffset = (e.clientX - centerX) * 0.3;
         const yOffset = (e.clientY - centerY) * 0.3;
         
         this.style.transform = `translate(${xOffset}px, ${yOffset}px)`;
     });
     
     button.addEventListener('mouseleave', function() {
-        // Return to original position when the mouse leaves
         this.style.transform = 'translate(0, 0)';
     });
 });
 
 // --- 2. Copy to Clipboard Logic ---
-// Showing a visual "Copied!" state to give the user immediate feedback.
 document.querySelectorAll('.copy-btn').forEach(button => {
     button.addEventListener('click', async function() {
         const codeType = this.getAttribute('data-code');
         const contentToCopy = codeSnippets[codeType];
         
+        if (!contentToCopy) {
+            console.error('No snippet found for:', codeType);
+            return;
+        }
+
         try {
             await navigator.clipboard.writeText(contentToCopy);
             
-            // Visual feedback state
             const originalContent = this.innerHTML;
             this.innerHTML = `
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-right: 4px;">
@@ -70,12 +99,12 @@ document.querySelectorAll('.copy-btn').forEach(button => {
                 </svg> 
                 Copied!
             `;
-            this.style.backgroundColor = '#10b981'; // Success green
+            const originalBg = this.style.backgroundColor;
+            this.style.backgroundColor = '#10b981';
             
-            // Reset button after 2 seconds
             setTimeout(() => {
                 this.innerHTML = originalContent;
-                this.style.backgroundColor = '';
+                this.style.backgroundColor = originalBg;
             }, 2000);
             
         } catch (err) {
