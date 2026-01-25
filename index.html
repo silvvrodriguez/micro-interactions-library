@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro-Interactions Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="interactions/button-ripple.css">
+    <link rel="stylesheet" href="interactions/magnetic-button.css">
+    <link rel="stylesheet" href="interactions/glow-card.css">
+    <link rel="stylesheet" href="interactions/smooth-scroll.css">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    
+    <header class="hero">
+        <div class="container">
+            <h1 class="hero-title">Micro-Interactions</h1>
+            <p class="hero-subtitle">A curated collection of delightful UI interactions</p>
+            <p class="hero-description">Beautiful, copy-paste ready components for modern web applications</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="grid">
+            <!-- Ripple Button -->
+            <article class="interaction-card glow-card">
+                <div class="card-header">
+                    <h3>Ripple Button</h3>
+                    <span class="tag">Button</span>
+                </div>
+                <div class="preview-area">
+                    <button class="ripple-button">Click me</button>
+                </div>
+                <div class="card-footer">
+                    <button class="copy-btn" data-code="ripple">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.5 5.5h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3.5 10.5h-1a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Copy Code
+                    </button>
+                    <a href="#ripple" class="details-link">Details →</a>
+                </div>
+            </article>
+
+            <!-- Magnetic Button -->
+            <article class="interaction-card glow-card">
+                <div class="card-header">
+                    <h3>Magnetic Button</h3>
+                    <span class="tag">Button</span>
+                </div>
+                <div class="preview-area">
+                    <button class="magnetic-button">Hover me</button>
+                </div>
+                <div class="card-footer">
+                    <button class="copy-btn" data-code="magnetic">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.5 5.5h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3.5 10.5h-1a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Copy Code
+                    </button>
+                    <a href="#magnetic" class="details-link">Details →</a>
+                </div>
+            </article>
+
+            <!-- Glow Card -->
+            <article class="interaction-card glow-card">
+                <div class="card-header">
+                    <h3>Glow Card</h3>
+                    <span class="tag">Card</span>
+                </div>
+                <div class="preview-area">
+                    <div class="demo-glow-card glow-card" style="padding: 2rem; text-align: center;">
+                        <p style="margin: 0; color: #e0e0e0;">Hover over me</p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="copy-btn" data-code="glow">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.5 5.5h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3.5 10.5h-1a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Copy Code
+                    </button>
+                    <a href="#glow" class="details-link">Details →</a>
+                </div>
+            </article>
+
+            <!-- Smooth Scroll -->
+            <article class="interaction-card glow-card">
+                <div class="card-header">
+                    <h3>Smooth Scroll</h3>
+                    <span class="tag">Navigation</span>
+                </div>
+                <div class="preview-area">
+                    <button class="smooth-scroll-demo ripple-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                        Scroll to top
+                    </button>
+                </div>
+                <div class="card-footer">
+                    <button class="copy-btn" data-code="scroll">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M13.5 5.5h-7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3.5 10.5h-1a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        Copy Code
+                    </button>
+                    <a href="#scroll" class="details-link">Details →</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="about">
+            <h2>About this library</h2>
+            <p>Each micro-interaction is crafted with attention to detail, focusing on performance and accessibility. All components are vanilla CSS and JavaScript—no frameworks required.</p>
+            <div class="stats">
+                <div class="stat">
+                    <strong>4</strong>
+                    <span>Interactions</span>
+                </div>
+                <div class="stat">
+                    <strong>0</strong>
+                    <span>Dependencies</span>
+                </div>
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Copy-Paste Ready</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crafted with care by <strong>Silvana</strong> • <a href="https://github.com/yourusername" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="interactions/button-ripple.js"></script>
+    <script src="interactions/magnetic-button.js"></script>
+    <script src="interactions/smooth-scroll.js"></script>
+</body>
+</html>

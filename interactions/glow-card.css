@@ -1,0 +1,27 @@
+.glow-card {
+    position: relative;
+    background: #141414;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.glow-card:hover::before {
+    opacity: 0.5;
+}
+
+.glow-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+}
