@@ -1,16 +1,31 @@
+/* * Magnetic Button
+ * A button that slightly follows the cursor, creating a "magnetic" attraction.
+ */
+
 .magnetic-button {
-    padding: 1rem 2rem;
-    background: #1a1a1a;
-    color: white;
-    border: 2px solid #333;
-    border-radius: 8px;
+    padding: 1rem 2.5rem;
+    background: var(--bg-card, #141414);
+    color: var(--text-primary, #ffffff);
+    border: 2px solid var(--border, #2a2a2a);
+    border-radius: 12px; 
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+    
+    display: inline-block;
+    outline: none;
 }
 
 .magnetic-button:hover {
-    border-color: #667eea;
-    box-shadow: 0 0 20px rgba(102, 126, 234, 0.4);
+    border-color: var(--accent, #6366f1);
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+    color: #fff;
+}
+
+.magnetic-button:active {
+    transform: scale(0.96); 
 }

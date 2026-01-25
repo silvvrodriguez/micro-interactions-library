@@ -1,3 +1,31 @@
-html {
-    scroll-behavior: smooth;
-}
+/**
+ * Smooth Scroll Interaction
+ * This script intercepts clicks on anchor links to create a 
+ * fluid navigation experience between sections.
+ */
+const internalLinks = document.querySelectorAll('a[href^="#"]');
+
+internalLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        
+        // Prevent default behavior only if it's a valid internal link
+        if (targetId === '#') return;
+
+        const destination = document.querySelector(targetId);
+
+        if (destination) {
+            e.preventDefault();
+            
+            // Native smooth scroll API
+            destination.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+
+            // Accessibility: Update focus to the target element
+            destination.setAttribute('tabindex', '-1');
+            destination.focus({ preventScroll: true });
+        }
+    });
+});

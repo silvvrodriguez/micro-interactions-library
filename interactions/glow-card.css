@@ -1,27 +1,39 @@
+/* * Glow Card Component
+ * A subtle spotlight effect that tracks the mouse position.
+ */
+
 .glow-card {
     position: relative;
     background: #141414;
-    border: 1px solid #2a2a2a;
-    border-radius: 16px;
-    transition: all 0.3s ease;
+    border: 1px solid var(--border, #2a2a2a); 
+    border-radius: 20px;
+    padding: 2rem;
+    overflow: hidden; 
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+    z-index: 1; 
 }
 
+/* The interactive spotlight effect */
 .glow-card::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(99, 102, 241, 0.15),
+        transparent 40%
+    );
     opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-}
-
-.glow-card:hover::before {
-    opacity: 0.5;
+    transition: opacity 0.4s ease; 
+    z-index: -1; 
+    pointer-events: none;
 }
 
 .glow-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    transform: translateY(-5px);
+    border-color: rgba(99, 102, 241, 0.5);
+}
+
+.glow-card:hover::before {
+    opacity: 1;
 }
