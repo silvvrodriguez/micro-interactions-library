@@ -1,13 +1,13 @@
-# 🎨 Micro-Interactions Library
+# Micro-Interactions Library
 
 A small collection of lightweight micro-interactions built with **pure HTML, CSS, and vanilla JavaScript**.  
 This project was created as a hands-on exercise to explore how subtle UI details can improve the overall user experience without relying on heavy frameworks or libraries.
 
-## 👉 [View Live Demo](https://silvvrodriguez.github.io/micro-interactions-library/) 
+## [View Live Demo](https://silvvrodriguez.github.io/micro-interactions-library/) 
 
 ---
 
-## 🎯 What’s inside
+## What’s inside
 
 This repository contains **4 simple micro-interactions**, designed to be easy to understand, reuse, and customize:
 
@@ -18,7 +18,7 @@ This repository contains **4 simple micro-interactions**, designed to be easy to
 
 ---
 
-## 📦 Included interactions
+## Included interactions
 
 ### 1. Ripple Button
 A Material Design–inspired click effect implemented with CSS and JavaScript.
@@ -34,7 +34,7 @@ A simple smooth scrolling behavior for in-page navigation.
 
 ---
 
-## 🛠️ Tech stack
+## Tech stack
 
 - Vanilla JavaScript (ES6+)
 - CSS3 (Flexbox, Grid, transitions, animations)
@@ -44,7 +44,7 @@ This project intentionally avoids frameworks and build tools to keep the code ap
 
 ---
 
-## 🚀 Usage
+## Usage
 
 Each interaction lives in its own folder.  
 You can copy the HTML, CSS, and JavaScript files directly into your project and adjust the styles or behavior as needed.
@@ -53,7 +53,7 @@ No setup or build step is required.
 
 ---
 
-## 💡 Why this project?
+## Why this project?
 
 I built this project as a **learning and experimentation exercise** focused on micro-interactions—small details that can make interfaces feel more polished and engaging.
 
@@ -68,7 +68,7 @@ Animations are intentionally subtle to avoid excessive motion and keep interacti
 
 ---
 
-## 👩‍💻 About
+## About
 
 Created by **Silvana Rodriguez**  
 Software Developer & Product Designer (UI/UX)
@@ -80,7 +80,7 @@ I enjoy working at the intersection of design and development, with a focus on c
 
 ---
 
-## 📄 License
+## License
 
 MIT License — feel free to use, modify, and learn from this project.
 
