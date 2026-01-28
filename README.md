@@ -3,9 +3,8 @@
 A small collection of lightweight micro-interactions built with **pure HTML, CSS, and vanilla JavaScript**.  
 This project was created as a hands-on exercise to explore how subtle UI details can improve the overall user experience without relying on heavy frameworks or libraries.
 
-## [View Live Demo](https://silvvrodriguez.github.io/micro-interactions-library/) 
+## [Live Demo](https://silvvrodriguez.github.io/micro-interactions-library/) 
 
----
 
 ## What’s inside
 
@@ -16,7 +15,6 @@ This repository contains **4 simple micro-interactions**, designed to be easy to
 - Each interaction is isolated and copy-paste friendly
 - Focused on clarity and learning rather than abstraction
 
----
 
 ## Included interactions
 
@@ -32,7 +30,6 @@ A card component with an animated gradient border that appears on hover.
 ### 4. Smooth Scroll
 A simple smooth scrolling behavior for in-page navigation.
 
----
 
 ## Tech stack
 
@@ -42,7 +39,6 @@ A simple smooth scrolling behavior for in-page navigation.
 
 This project intentionally avoids frameworks and build tools to keep the code approachable and easy to modify.
 
----
 
 ## Usage
 
@@ -51,7 +47,6 @@ You can copy the HTML, CSS, and JavaScript files directly into your project and 
 
 No setup or build step is required.
 
----
 
 ## Why this project?
 
@@ -66,7 +61,6 @@ I especially enjoyed experimenting with hover states and motion timing, and seei
 
 Animations are intentionally subtle to avoid excessive motion and keep interactions comfortable to use.
 
----
 
 ## About
 
@@ -75,15 +69,8 @@ Software Developer & Product Designer (UI/UX)
 
 I enjoy working at the intersection of design and development, with a focus on clean interfaces, usability, and thoughtful interactions.
 
-[Portfolio](https://silvvrodriguez.github.io/micro-interactions-library/) • [GitHub](https://github.com/silvvrodriguez)
-
-
----
 
 ## License
 
 MIT License — feel free to use, modify, and learn from this project.
 
----
-
-If you find this project useful, feel free to star the repository.
